@@ -1,0 +1,37 @@
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: posts ","time":"2018-02-20T02:33:02.285Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: users ","time":"2018-02-20T02:33:02.498Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: roles ","time":"2018-02-20T02:33:02.822Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: roles_users ","time":"2018-02-20T02:33:03.161Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: permissions ","time":"2018-02-20T02:33:04.675Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: permissions_users ","time":"2018-02-20T02:33:05.254Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: permissions_roles ","time":"2018-02-20T02:33:05.366Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: permissions_apps ","time":"2018-02-20T02:33:05.489Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: settings ","time":"2018-02-20T02:33:05.611Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: tags ","time":"2018-02-20T02:33:05.857Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: posts_tags ","time":"2018-02-20T02:33:06.103Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: apps ","time":"2018-02-20T02:33:06.237Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: app_settings ","time":"2018-02-20T02:33:06.627Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: app_fields ","time":"2018-02-20T02:33:06.908Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: clients ","time":"2018-02-20T02:33:07.030Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: client_trusted_domains ","time":"2018-02-20T02:33:07.399Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: accesstokens ","time":"2018-02-20T02:33:07.511Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: refreshtokens ","time":"2018-02-20T02:33:07.736Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: subscribers ","time":"2018-02-20T02:33:07.981Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: invites ","time":"2018-02-20T02:33:08.271Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: brute ","time":"2018-02-20T02:33:08.640Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Creating table: webhooks ","time":"2018-02-20T02:33:08.796Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Model: Post ","time":"2018-02-20T02:33:09.028Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Model: Tag ","time":"2018-02-20T02:33:09.237Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Model: Client ","time":"2018-02-20T02:33:09.245Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Model: Role ","time":"2018-02-20T02:33:09.259Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Model: Permission ","time":"2018-02-20T02:33:09.273Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Model: User ","time":"2018-02-20T02:33:09.470Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Relation: Role to Permission ","time":"2018-02-20T02:33:13.006Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Relation: Post to Tag ","time":"2018-02-20T02:33:13.203Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4596,"level":30,"msg":"Relation: User to Role ","time":"2018-02-20T02:33:13.228Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4652,"level":40,"msg":"Theme's file locales/en.json not found. ","time":"2018-02-20T02:33:19.120Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4652,"level":30,"msg":"Ghost is running in development... ","time":"2018-02-20T02:33:19.245Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4652,"level":30,"msg":"Listening on: 127.0.0.1:2369 ","time":"2018-02-20T02:33:19.245Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4652,"level":30,"msg":"Url configured as: http://localhost:2369/ ","time":"2018-02-20T02:33:19.246Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4652,"level":30,"msg":"Ctrl+C to shut down ","time":"2018-02-20T02:33:19.247Z","v":0}
+{"name":"Log","hostname":"Lenovo-Y700-14ISK","pid":4652,"level":30,"msg":"Ghost boot 4.431s ","time":"2018-02-20T02:33:19.248Z","v":0}
