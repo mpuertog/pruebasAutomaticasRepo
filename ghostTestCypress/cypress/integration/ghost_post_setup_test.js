@@ -39,7 +39,11 @@ describe('Ghost Tests - 2', function () {
         cy.title().should('include', 'Content')
         cy.get('.gh-nav-main-editor').contains('New story').click()
         cy.get('.gh-editor-title').type('Test post Title')
-        cy.get('.CodeMirror-line').closest('.textarea').type('qqqqq')
+        cy.get('textarea').eq(2).type('Test post content text', { force: true })
+        cy.get('.gh-publishmenu').click()
+        cy.get('.gh-btn-blue').contains('Publish').click()
+        cy.get('.gh-notification-content > a').click()
+        cy.visit('http://localhost:2368/test-post-title/').title().should('include', 'Test post Title')
     })
 
 })
