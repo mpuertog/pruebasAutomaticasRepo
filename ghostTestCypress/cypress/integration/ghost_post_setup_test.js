@@ -1,7 +1,7 @@
 /* This test is intended to run after ghost_post_install_test.js */
 
 describe('Ghost Tests - 2', function () {
-/*
+    
     //Check if environment it's ok
     it('.should() - confirm ghost is online', function () {
       cy.visit('http://localhost:2368')
@@ -28,7 +28,6 @@ describe('Ghost Tests - 2', function () {
         cy.get('.user-menu-signout').click()
         cy.title().should('include', 'Sign In')
     })
-*/
     
     //Post an entry in a blog
     it('.should() - logout admin account', function(){
