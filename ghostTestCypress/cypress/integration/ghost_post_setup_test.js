@@ -39,6 +39,7 @@ describe('Ghost Tests - 2', function () {
         cy.title().should('include', 'Content')
         cy.get('.gh-nav-main-editor').contains('New story').click()
         cy.get('.gh-editor-title').type('Test post Title')
+        cy.get('.CodeMirror-line').closest('.textarea').type('qqqqq')
     })
 
 })
