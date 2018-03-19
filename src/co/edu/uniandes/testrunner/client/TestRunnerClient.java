@@ -2,6 +2,12 @@ package co.edu.uniandes.testrunner.client;
 
 import co.edu.uniandes.testrunner.commandrunner.CommandRunner;
 
+/**
+ * Clase cliente que ejecuta el {@link CommandRunner}
+ * 
+ * @author ms.puerto@uniandes.edu.co
+ *
+ */
 public class TestRunnerClient {
 
 	public static void main(String[] args) {
@@ -10,7 +16,8 @@ public class TestRunnerClient {
 				"lighthouse --output json --chrome-flags=\"--headless\" --output-path=./lighthouse-results.json http://www.google.com");
 		runner.runCommand("calabash-android gen");
 		runner.runCommand("calabash-android resign apk/es.usc.citius.servando.calendula_34.apk");
-		runner.runCommand("calabash-android run apk/es.usc.citius.servando.calendula_34.apk --format json --out android.json");
+		runner.runCommand(
+				"calabash-android run apk/es.usc.citius.servando.calendula_34.apk --format json --out android.json");
 	}
 
 }

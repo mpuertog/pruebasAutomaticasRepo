@@ -7,6 +7,11 @@ import java.io.InputStreamReader;
 import co.edu.uniandes.testrunner.util.ApplicationConstants;
 import co.edu.uniandes.testrunner.util.ApplicationLogMessages;
 
+/**
+ * Implementación específica del {@link CommandRunner} para Windows
+ * @author ms.puerto@uniandes.edu.co
+ *
+ */
 public class CommandRunnerWindows extends CommandRunner {
 
 	@Override
