@@ -8,6 +8,9 @@ public class TestRunnerClient {
 		CommandRunner runner = CommandRunner.getRunner();
 		runner.runCommand(
 				"lighthouse --output json --chrome-flags=\"--headless\" --output-path=./lighthouse-results.json http://www.google.com");
+		runner.runCommand("calabash-android gen");
+		runner.runCommand("calabash-android resign apk/es.usc.citius.servando.calendula_34.apk");
+		runner.runCommand("calabash-android run apk/es.usc.citius.servando.calendula_34.apk --format json --out android.json");
 	}
 
 }

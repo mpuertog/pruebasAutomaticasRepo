@@ -11,5 +11,6 @@ public class ApplicationConstants {
 	public static final String OS_NAME_PROPERTY = "os.name";
 	public static final String OS_WINDOWS = "Windows";
 	public static final String OS_LINUX = "Linux";
+	public static final String POWER_SHELL = "powershell.exe";
 
 }
