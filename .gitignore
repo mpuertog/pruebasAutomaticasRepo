@@ -3,3 +3,5 @@
 /.settings/
 /.classpath
 /.project
+/TestRunner.log
+/lighthouse-results.json
