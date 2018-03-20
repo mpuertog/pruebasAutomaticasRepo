@@ -33,10 +33,11 @@ public abstract class CommandRunner {
 	}
 
 	/**
-	 * Método abstracto a ser implementado por cada {@link CommandRunner} específico
+	 * Envía el comando ingresado al sistema operativo, es un método abstracto con
+	 * una implementación distinta para cada{@link CommandRunner} específico
 	 * 
 	 * @param command
-	 *            Comando a ser enviado al OS
+	 *            {@link String} con el comando a ser enviado al OS
 	 */
 	public abstract void runCommand(String command);
 
