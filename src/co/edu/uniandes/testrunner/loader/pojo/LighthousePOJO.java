@@ -1,7 +1,10 @@
 package co.edu.uniandes.testrunner.loader.pojo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * POJO que contiene los datos relevantes del reporte Lighthouse para
+ * {@link POJO} que contiene los datos relevantes del reporte Lighthouse para
  * Progressive Web Apps (PWA)
  * 
  * @author ms.puerto@uniandes.edu.co
@@ -14,7 +17,11 @@ public class LighthousePOJO extends POJO {
 	private String initialUrl;
 	private String serviceWorker;
 	private String worksOffline;
-	private Float score;
+	private List<LighthouseReportCategoryPOJO> categories;
+
+	public LighthousePOJO() {
+		this.categories = new ArrayList<LighthouseReportCategoryPOJO>();
+	}
 
 	public String getUserAgent() {
 		return userAgent;
@@ -56,12 +63,12 @@ public class LighthousePOJO extends POJO {
 		this.worksOffline = worksOffline;
 	}
 
-	public Float getScore() {
-		return score;
+	public List<LighthouseReportCategoryPOJO> getCategories() {
+		return categories;
 	}
 
-	public void setScore(Float score) {
-		this.score = score;
+	public void setCategories(List<LighthouseReportCategoryPOJO> categories) {
+		this.categories = categories;
 	}
 
 }
