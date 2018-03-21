@@ -21,6 +21,13 @@ import co.edu.uniandes.testrunner.loader.pojo.POJO;
 import co.edu.uniandes.testrunner.util.ApplicationConstants;
 import co.edu.uniandes.testrunner.util.ReportConstants;
 
+/**
+ * Clase que recibe una lista de {@link POJO} con la información recolectada
+ * tras la ejecución de las pruebas y permite exportar a PDF
+ * 
+ * @author ms.puerto@uniandes.edu.co
+ *
+ */
 public class PDFCreator {
 
 	public final static Font SMALL_BOLD = new Font(Font.FontFamily.TIMES_ROMAN, 8, Font.BOLD);
@@ -30,6 +37,15 @@ public class PDFCreator {
 	private HeaderFooter event;
 	private PdfWriter writer;
 
+	/**
+	 * Crea un PDF con el reporte de las pruebas ejecutadas
+	 * 
+	 * @param pojoList
+	 *            {@link List} de {@link POJO} con la información recolectada tras
+	 *            la ejecución de las pruebas
+	 * @throws DocumentException
+	 * @throws FileNotFoundException
+	 */
 	public void createDocument(List<POJO> pojoList) throws DocumentException, FileNotFoundException {
 		document = new Document(PageSize.A4);
 		event = new HeaderFooter();
@@ -42,12 +58,25 @@ public class PDFCreator {
 		PDFCreator.addContent(document, pojoList);
 	}
 
+	/**
+	 * Agrega los metadatos al PDF creado
+	 * 
+	 * @param document
+	 * @param sqlXMLFileName
+	 */
 	public static void addMetaData(Document document, String sqlXMLFileName) {
 		document.addTitle(ReportConstants.REPORT_TITLE);
 		document.addSubject(ReportConstants.REPORT_SUBJECT);
 		document.addAuthor(ReportConstants.REPORT_AUTHOR);
 	}
 
+	/**
+	 * Ensambla el contenido del PDF
+	 * 
+	 * @param document
+	 * @param dataObjList
+	 * @throws DocumentException
+	 */
 	public static void addContent(Document document, List<POJO> dataObjList) throws DocumentException {
 
 		for (POJO pojo : dataObjList) {
@@ -105,12 +134,23 @@ public class PDFCreator {
 		}
 	}
 
+	/**
+	 * Facilita la escritura de una nueva linea en el PDF
+	 * 
+	 * @param paragraph
+	 * @param number
+	 */
 	public static void addEmptyLine(Paragraph paragraph, int number) {
 		for (int i = 0; i < number; i++) {
 			paragraph.add(new Paragraph(ApplicationConstants.WHITE_SPACE));
 		}
 	}
 
+	/**
+	 * Facilita la creación de un nuevo {@link Paragraph}
+	 * 
+	 * @return {@link Paragraph} nuevo
+	 */
 	public static Paragraph getParagraph() {
 		Paragraph paragraph = new Paragraph();
 		paragraph.setFont(PDFCreator.NORMAL_FONT);
