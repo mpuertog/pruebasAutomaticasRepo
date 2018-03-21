@@ -146,7 +146,7 @@ public class PDFCreator {
 				Paragraph subtitle8 = new Paragraph(ReportConstants.REPORT_SCENARIO,
 						FontFactory.getFont(FontFactory.HELVETICA, 14, Font.BOLD, new CMYKColor(0, 255, 255, 17)));
 				Section section8 = chapter2.addSection(subtitle8);
-				Paragraph someSectionText8 = new Paragraph(calabashPojo.getFeatureName());
+				Paragraph someSectionText8 = new Paragraph(calabashPojo.getscenario());
 				section8.add(someSectionText8);
 
 				Paragraph subtitle9 = new Paragraph(ReportConstants.REPORT_STEPS,
