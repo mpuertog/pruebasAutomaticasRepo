@@ -14,6 +14,7 @@ public class ApplicationConstants {
 	public static final String POWER_SHELL = "powershell.exe";
 	public static final String LINE_SEPARATOR = "line.separator";
 	public static final String COLON = ": ";
+	public static final String WHITE_SPACE = " ";
 	public static final String LIGHTHOUSE_POJO = "LighthousePOJO";
 	public static final String CALABASH_POJO = "CalabashAndroidPOJO";
 
