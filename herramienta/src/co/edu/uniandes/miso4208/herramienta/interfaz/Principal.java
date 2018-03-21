@@ -1,33 +1,35 @@
 package co.edu.uniandes.miso4208.herramienta.interfaz;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
 import java.awt.BorderLayout;
-import javax.swing.JPanel;
-import javax.swing.border.TitledBorder;
-import javax.swing.JRadioButton;
-import javax.swing.UIManager;
 import java.awt.Color;
-import java.awt.FlowLayout;
-import javax.swing.JTextArea;
-import javax.swing.JButton;
+import java.awt.EventQueue;
 import java.awt.GridLayout;
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.ListSelectionModel;
-import javax.swing.SwingConstants;
-import javax.swing.JScrollPane;
-import java.awt.Component;
-import javax.swing.ScrollPaneConstants;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-import javax.swing.ButtonGroup;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
+
+import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
+
+import co.edu.uniandes.miso4208.herramienta.controlador.Orquestador;
+import co.edu.uniandes.miso4208.herramienta.repositorio.Aplicacion;
+import co.edu.uniandes.miso4208.herramienta.repositorio.Prueba;
+import co.edu.uniandes.miso4208.herramienta.repositorio.TipoDispositivo;
+import co.edu.uniandes.miso4208.herramienta.repositorio.TipoPrueba;
 
 public class Principal {
 
@@ -73,7 +75,7 @@ public class Principal {
 	private void initialize() {
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"USERNAME", "miusuario"},
+				{},
 			},
 			new String[] {
 				"Par\u00E1metro", "Valor"
@@ -98,7 +100,7 @@ public class Principal {
 		table.getColumnModel().getColumn(1).setMaxWidth(75);
 		frmHerramientaAutomatizacinPruebas = new JFrame();
 		frmHerramientaAutomatizacinPruebas.setTitle("Herramienta automatizaci\u00F3n pruebas");
-		frmHerramientaAutomatizacinPruebas.setBounds(100, 100, 665, 476);
+		frmHerramientaAutomatizacinPruebas.setBounds(100, 100, 800, 476);
 		frmHerramientaAutomatizacinPruebas.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmHerramientaAutomatizacinPruebas.getContentPane().setLayout(new BorderLayout(0, 0));
 		
@@ -120,8 +122,7 @@ public class Principal {
 		panel_7.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "2. Aplicacion", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel.add(panel_7);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Ghost"}));
+		JComboBox<Aplicacion> comboBox_1 = new JComboBox<>();
 		panel_7.add(comboBox_1);
 		
 		JPanel panel_1 = new JPanel();
@@ -188,9 +189,8 @@ public class Principal {
 		panel_5.add(lblPrueba);
 		lblPrueba.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox comboBox = new JComboBox<>();
 		panel_5.add(comboBox);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Registro", "Login"}));
 		
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -198,13 +198,62 @@ public class Principal {
 
 		rdbtnNewRadioButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Calendula","MyExpenses"}));
+				List<Aplicacion> aplicaciones = Aplicacion.obtenerPorDispositivo(TipoDispositivo.ANDROID);
+				comboBox_1.setModel(new DefaultComboBoxModel(aplicaciones.toArray()));
 			}
 		});
 
 		rdbtnWeb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Ghost"}));
+				List<Aplicacion> aplicaciones = Aplicacion.obtenerPorDispositivo(TipoDispositivo.WEB);
+				comboBox_1.setModel(new DefaultComboBoxModel(aplicaciones.toArray()));
+			}
+		});
+		
+		rdbtnHeadless.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Aplicacion aplicacion = (Aplicacion) comboBox_1.getSelectedItem();
+				List<Prueba> pruebas = Prueba.obtenerPorAplicacionYTipo(aplicacion, TipoPrueba.HEADLESS);
+				comboBox.setModel(new DefaultComboBoxModel(pruebas.toArray()));
+			}
+		});
+		
+		rdbtnEndend.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Aplicacion aplicacion = (Aplicacion) comboBox_1.getSelectedItem();
+				List<Prueba> pruebas = Prueba.obtenerPorAplicacionYTipo(aplicacion, TipoPrueba.END_2_END);
+				comboBox.setModel(new DefaultComboBoxModel(pruebas.toArray()));
+			}
+		});
+
+		
+		rdbtnNofunctional.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Aplicacion aplicacion = (Aplicacion) comboBox_1.getSelectedItem();
+				List<Prueba> pruebas = Prueba.obtenerPorAplicacionYTipo(aplicacion, TipoPrueba.NO_FUNCIONAL);
+				comboBox.setModel(new DefaultComboBoxModel(pruebas.toArray()));
+			}
+		});
+		
+		rdbtnRamdom.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Aplicacion aplicacion = (Aplicacion) comboBox_1.getSelectedItem();
+				List<Prueba> pruebas = Prueba.obtenerPorAplicacionYTipo(aplicacion, TipoPrueba.RANDOM);
+				comboBox.setModel(new DefaultComboBoxModel(pruebas.toArray()));
+			}
+		});
+		
+		rdbtnBehavior.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Aplicacion aplicacion = (Aplicacion) comboBox_1.getSelectedItem();
+				List<Prueba> pruebas = Prueba.obtenerPorAplicacionYTipo(aplicacion, TipoPrueba.BEHAVIOR);
+				comboBox.setModel(new DefaultComboBoxModel(pruebas.toArray()));
+			}
+		});
+		
+		btnGenerarReporte.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Orquestador.ejecutarPrueba((Prueba) comboBox.getSelectedItem());
 			}
 		});
 	}
