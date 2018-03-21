@@ -9,6 +9,8 @@ import co.edu.uniandes.testrunner.util.ApplicationConstants;
 
 public abstract class Loader {
 
+	protected String jsonString;
+
 	public abstract POJO loadFromFile(String fileName);
 
 	protected String readFile(String file) throws IOException {

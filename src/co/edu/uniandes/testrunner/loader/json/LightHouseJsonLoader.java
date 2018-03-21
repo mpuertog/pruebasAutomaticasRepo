@@ -21,10 +21,9 @@ import co.edu.uniandes.testrunner.util.LighthouseJsonKeys;
  * @author ms.puerto@uniandes.edu.co
  *
  */
-public class JsonLoader extends Loader {
+public class LightHouseJsonLoader extends Loader {
 
 	private LighthousePOJO pojo;
-	private String jsonString;
 
 	@Override
 	public POJO loadFromFile(String fileName) {
