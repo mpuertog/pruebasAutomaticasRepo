@@ -16,6 +16,7 @@ import com.itextpdf.text.Section;
 import com.itextpdf.text.pdf.CMYKColor;
 import com.itextpdf.text.pdf.PdfWriter;
 
+import co.edu.uniandes.testrunner.loader.pojo.CalabashAndroidPOJO;
 import co.edu.uniandes.testrunner.loader.pojo.LighthousePOJO;
 import co.edu.uniandes.testrunner.loader.pojo.POJO;
 import co.edu.uniandes.testrunner.util.ApplicationConstants;
@@ -80,13 +81,14 @@ public class PDFCreator {
 	public static void addContent(Document document, List<POJO> dataObjList) throws DocumentException {
 
 		for (POJO pojo : dataObjList) {
+			int chapterNumber = 1;
 
 			switch (pojo.getClass().getSimpleName()) {
 			case ApplicationConstants.LIGHTHOUSE_POJO:
 				LighthousePOJO lighthousePojo = (LighthousePOJO) pojo;
 				Paragraph title = new Paragraph(ReportConstants.REPORT_RESULTS, FontFactory
 						.getFont(FontFactory.HELVETICA, 18, Font.BOLDITALIC, new CMYKColor(0, 255, 255, 17)));
-				Chapter chapter = new Chapter(title, 1);
+				Chapter chapter = new Chapter(title, chapterNumber);
 				chapter.setNumberDepth(0);
 
 				Paragraph subtitle = new Paragraph(ReportConstants.REPORT_URL,
@@ -127,11 +129,40 @@ public class PDFCreator {
 
 				document.add(chapter);
 				break;
+
+			case ApplicationConstants.CALABASH_POJO:
+				CalabashAndroidPOJO calabashPojo = (CalabashAndroidPOJO) pojo;
+				Paragraph title7 = new Paragraph(ReportConstants.REPORT_RESULTS, FontFactory
+						.getFont(FontFactory.HELVETICA, 18, Font.BOLDITALIC, new CMYKColor(0, 255, 255, 17)));
+				Chapter chapter2 = new Chapter(title7, chapterNumber);
+				chapter2.setNumberDepth(0);
+
+				Paragraph subtitle7 = new Paragraph(ReportConstants.REPORT_FEATURE_NAME,
+						FontFactory.getFont(FontFactory.HELVETICA, 14, Font.BOLD, new CMYKColor(0, 255, 255, 17)));
+				Section section7 = chapter2.addSection(subtitle7);
+				Paragraph someSectionText7 = new Paragraph(calabashPojo.getFeatureName());
+				section7.add(someSectionText7);
+
+				Paragraph subtitle8 = new Paragraph(ReportConstants.REPORT_SCENARIO,
+						FontFactory.getFont(FontFactory.HELVETICA, 14, Font.BOLD, new CMYKColor(0, 255, 255, 17)));
+				Section section8 = chapter2.addSection(subtitle8);
+				Paragraph someSectionText8 = new Paragraph(calabashPojo.getFeatureName());
+				section8.add(someSectionText8);
+
+				Paragraph subtitle9 = new Paragraph(ReportConstants.REPORT_STEPS,
+						FontFactory.getFont(FontFactory.HELVETICA, 14, Font.BOLD, new CMYKColor(0, 255, 255, 17)));
+				Section section9 = chapter2.addSection(subtitle9);
+				Paragraph someSectionText9 = new Paragraph(calabashPojo.getStepsList().toString());
+				section9.add(someSectionText9);
+
+				document.add(chapter2);
+				break;
 			default:
 				break;
 			}
-			document.close();
+			chapterNumber++;
 		}
+		document.close();
 	}
 
 	/**

@@ -18,4 +18,9 @@ public class ReportConstants {
 	public static final String REPORT_SERVICE_WORKER = "Información del Service Worker:";
 	public static final String REPORT_LIGHTHOUSE_SCORE = "Calificación Lighthouse:";
 
+	public static final String REPORT_FEATURE_NAME = "Nombre de la funcionalidad:";
+	public static final String REPORT_SCENARIO = "Escenario de la funcionalidad:";
+	public static final String REPORT_STEPS = "Pasos ejecutados:";
+	public static final String REPORT_RESULT_TEMPLATE = "(Resultado: %s)";
+
 }
