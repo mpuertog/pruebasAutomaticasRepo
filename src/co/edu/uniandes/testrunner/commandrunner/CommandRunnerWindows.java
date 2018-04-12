@@ -10,7 +10,7 @@ import co.edu.uniandes.testrunner.util.ApplicationConstants;
 import co.edu.uniandes.testrunner.util.ApplicationLogMessages;
 
 /**
- * Implementación específica del {@link CommandRunner} para Windows
+ * ImplementaciÃ³n especÃ­fica del {@link CommandRunner} para Windows
  * 
  * @author ms.puerto@uniandes.edu.co
  *
