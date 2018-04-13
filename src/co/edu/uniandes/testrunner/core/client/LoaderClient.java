@@ -1,11 +1,11 @@
-package co.edu.uniandes.testrunner.client;
+package co.edu.uniandes.testrunner.core.client;
 
-import co.edu.uniandes.testrunner.loader.Loader;
-import co.edu.uniandes.testrunner.loader.json.CalabashJsonLoader;
-import co.edu.uniandes.testrunner.loader.json.LightHouseJsonLoader;
-import co.edu.uniandes.testrunner.loader.pojo.CalabashAndroidPOJO;
-import co.edu.uniandes.testrunner.loader.pojo.CalabashAndroidStepPOJO;
-import co.edu.uniandes.testrunner.loader.pojo.LighthousePOJO;
+import co.edu.uniandes.testrunner.core.loader.Loader;
+import co.edu.uniandes.testrunner.core.loader.json.CalabashJsonLoader;
+import co.edu.uniandes.testrunner.core.loader.json.LightHouseJsonLoader;
+import co.edu.uniandes.testrunner.core.loader.pojo.CalabashAndroidPOJO;
+import co.edu.uniandes.testrunner.core.loader.pojo.CalabashAndroidStepPOJO;
+import co.edu.uniandes.testrunner.core.loader.pojo.LighthousePOJO;
 
 public class LoaderClient {
 

@@ -1,4 +1,4 @@
-package co.edu.uniandes.testrunner.loader.json;
+package co.edu.uniandes.testrunner.core.loader.json;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,12 +7,19 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import co.edu.uniandes.testrunner.loader.Loader;
-import co.edu.uniandes.testrunner.loader.pojo.CalabashAndroidPOJO;
-import co.edu.uniandes.testrunner.loader.pojo.CalabashAndroidStepPOJO;
-import co.edu.uniandes.testrunner.loader.pojo.POJO;
-import co.edu.uniandes.testrunner.util.CalabashJsonKeys;
+import co.edu.uniandes.testrunner.core.loader.Loader;
+import co.edu.uniandes.testrunner.core.loader.pojo.CalabashAndroidPOJO;
+import co.edu.uniandes.testrunner.core.loader.pojo.CalabashAndroidStepPOJO;
+import co.edu.uniandes.testrunner.core.loader.pojo.POJO;
+import co.edu.uniandes.testrunner.core.util.CalabashJsonKeys;
 
+/**
+ * {@link Loader} específico para el archivo de salida de las pruebas E2E
+ * realizadas con Calabash-Android
+ * 
+ * @author ms.puerto@uniandes.edu.co
+ *
+ */
 @SuppressWarnings("rawtypes")
 public class CalabashJsonLoader extends Loader {
 

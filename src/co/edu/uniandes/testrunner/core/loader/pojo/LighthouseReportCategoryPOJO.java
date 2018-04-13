@@ -1,6 +1,6 @@
-package co.edu.uniandes.testrunner.loader.pojo;
+package co.edu.uniandes.testrunner.core.loader.pojo;
 
-import co.edu.uniandes.testrunner.util.ApplicationConstants;
+import co.edu.uniandes.testrunner.core.util.ApplicationConstants;
 
 /**
  * {@link POJO} que almacena el nombre de las categorías calificadas en las

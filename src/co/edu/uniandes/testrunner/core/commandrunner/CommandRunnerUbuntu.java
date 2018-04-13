@@ -1,4 +1,4 @@
-package co.edu.uniandes.testrunner.commandrunner;
+package co.edu.uniandes.testrunner.core.commandrunner;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,22 +6,22 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
 
-import co.edu.uniandes.testrunner.util.ApplicationConstants;
-import co.edu.uniandes.testrunner.util.ApplicationLogMessages;
+import co.edu.uniandes.testrunner.core.util.ApplicationConstants;
+import co.edu.uniandes.testrunner.core.util.ApplicationLogMessages;
 
 /**
- * Implementación específica del {@link CommandRunner} para Windows
+ * Implementación específica para Ubuntu 17.10 del {@link CommandRunner}
  * 
  * @author ms.puerto@uniandes.edu.co
  *
  */
-public class CommandRunnerWindows extends CommandRunner {
+public class CommandRunnerUbuntu extends CommandRunner {
 
 	@Override
 	public void runCommand(String command) {
 		String s = null;
 		try {
-			List<String> commandList = Arrays.asList(ApplicationConstants.POWER_SHELL, command);
+			List<String> commandList = Arrays.asList(ApplicationConstants.BASH, ApplicationConstants.BASH_PARAM, command);
 			ProcessBuilder processBuilder = new ProcessBuilder(commandList);
 			processBuilder.redirectErrorStream(true);
 			logger.info(String.format(ApplicationLogMessages.LOG_RUNNING_COMMAND, command));
@@ -35,7 +35,6 @@ public class CommandRunnerWindows extends CommandRunner {
 		} catch (IOException | InterruptedException e) {
 			logger.error(ApplicationLogMessages.LOG_COMMAND_ERROR, e);
 		}
-
 	}
 
 }

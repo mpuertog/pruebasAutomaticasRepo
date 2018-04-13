@@ -1,10 +1,10 @@
-package co.edu.uniandes.testrunner.commandrunner;
+package co.edu.uniandes.testrunner.core.commandrunner;
 
 import java.io.BufferedReader;
 
 import org.apache.log4j.Logger;
 
-import co.edu.uniandes.testrunner.util.ApplicationConstants;
+import co.edu.uniandes.testrunner.core.util.ApplicationConstants;
 
 /**
  * Clase abstracta que determina el {@link CommandRunner} a utilizar,

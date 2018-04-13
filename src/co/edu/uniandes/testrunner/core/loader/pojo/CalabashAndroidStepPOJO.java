@@ -1,7 +1,7 @@
-package co.edu.uniandes.testrunner.loader.pojo;
+package co.edu.uniandes.testrunner.core.loader.pojo;
 
-import co.edu.uniandes.testrunner.util.ApplicationConstants;
-import co.edu.uniandes.testrunner.util.ReportConstants;
+import co.edu.uniandes.testrunner.core.util.ApplicationConstants;
+import co.edu.uniandes.testrunner.core.util.ReportConstants;
 
 /**
  * {@link POJO} que contiene la información relevante a los pasos seguidos

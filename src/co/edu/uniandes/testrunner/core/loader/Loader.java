@@ -1,12 +1,19 @@
-package co.edu.uniandes.testrunner.loader;
+package co.edu.uniandes.testrunner.core.loader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import co.edu.uniandes.testrunner.loader.pojo.POJO;
-import co.edu.uniandes.testrunner.util.ApplicationConstants;
+import co.edu.uniandes.testrunner.core.loader.pojo.POJO;
+import co.edu.uniandes.testrunner.core.util.ApplicationConstants;
 
+/**
+ * Clase abstracta que define los métodos a implementar para cada {@link Loader}
+ * específico
+ * 
+ * @author ms.puerto@uniandes.edu.co
+ *
+ */
 public abstract class Loader {
 
 	protected String jsonString;

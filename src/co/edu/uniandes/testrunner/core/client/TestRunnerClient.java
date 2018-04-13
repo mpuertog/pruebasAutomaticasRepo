@@ -1,6 +1,6 @@
-package co.edu.uniandes.testrunner.client;
+package co.edu.uniandes.testrunner.core.client;
 
-import co.edu.uniandes.testrunner.commandrunner.CommandRunner;
+import co.edu.uniandes.testrunner.core.commandrunner.CommandRunner;
 
 /**
  * Clase cliente que ejecuta el {@link CommandRunner}

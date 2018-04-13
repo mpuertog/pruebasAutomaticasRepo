@@ -1,4 +1,4 @@
-package co.edu.uniandes.testrunner.report;
+package co.edu.uniandes.testrunner.core.report;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;

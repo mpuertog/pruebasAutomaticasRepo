@@ -1,4 +1,4 @@
-package co.edu.uniandes.testrunner.report;
+package co.edu.uniandes.testrunner.core.report;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,11 +16,11 @@ import com.itextpdf.text.Section;
 import com.itextpdf.text.pdf.CMYKColor;
 import com.itextpdf.text.pdf.PdfWriter;
 
-import co.edu.uniandes.testrunner.loader.pojo.CalabashAndroidPOJO;
-import co.edu.uniandes.testrunner.loader.pojo.LighthousePOJO;
-import co.edu.uniandes.testrunner.loader.pojo.POJO;
-import co.edu.uniandes.testrunner.util.ApplicationConstants;
-import co.edu.uniandes.testrunner.util.ReportConstants;
+import co.edu.uniandes.testrunner.core.loader.pojo.CalabashAndroidPOJO;
+import co.edu.uniandes.testrunner.core.loader.pojo.LighthousePOJO;
+import co.edu.uniandes.testrunner.core.loader.pojo.POJO;
+import co.edu.uniandes.testrunner.core.util.ApplicationConstants;
+import co.edu.uniandes.testrunner.core.util.ReportConstants;
 
 /**
  * Clase que recibe una lista de {@link POJO} con la información recolectada
@@ -86,7 +86,7 @@ public class PDFCreator {
 			switch (pojo.getClass().getSimpleName()) {
 			case ApplicationConstants.LIGHTHOUSE_POJO:
 				LighthousePOJO lighthousePojo = (LighthousePOJO) pojo;
-				Paragraph title = new Paragraph(ReportConstants.REPORT_RESULTS, FontFactory
+				Paragraph title = new Paragraph(ReportConstants.REPORT_LIGHTHOUSE_HEADER, FontFactory
 						.getFont(FontFactory.HELVETICA, 18, Font.BOLDITALIC, new CMYKColor(0, 255, 255, 17)));
 				Chapter chapter = new Chapter(title, chapterNumber);
 				chapter.setNumberDepth(0);
@@ -132,7 +132,7 @@ public class PDFCreator {
 
 			case ApplicationConstants.CALABASH_POJO:
 				CalabashAndroidPOJO calabashPojo = (CalabashAndroidPOJO) pojo;
-				Paragraph title7 = new Paragraph(ReportConstants.REPORT_RESULTS, FontFactory
+				Paragraph title7 = new Paragraph(ReportConstants.REPORT_CALABASH_HEADER, FontFactory
 						.getFont(FontFactory.HELVETICA, 18, Font.BOLDITALIC, new CMYKColor(0, 255, 255, 17)));
 				Chapter chapter2 = new Chapter(title7, chapterNumber);
 				chapter2.setNumberDepth(0);

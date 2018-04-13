@@ -1,4 +1,4 @@
-package co.edu.uniandes.testrunner.loader.pojo;
+package co.edu.uniandes.testrunner.core.loader.pojo;
 
 import java.util.ArrayList;
 import java.util.List;

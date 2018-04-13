@@ -1,4 +1,4 @@
-package co.edu.uniandes.testrunner.util;
+package co.edu.uniandes.testrunner.core.util;
 
 public class CalabashJsonKeys {
 

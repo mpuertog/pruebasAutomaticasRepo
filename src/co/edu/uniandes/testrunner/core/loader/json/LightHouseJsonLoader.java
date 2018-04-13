@@ -1,4 +1,4 @@
-package co.edu.uniandes.testrunner.loader.json;
+package co.edu.uniandes.testrunner.core.loader.json;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,11 +7,11 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import co.edu.uniandes.testrunner.loader.Loader;
-import co.edu.uniandes.testrunner.loader.pojo.LighthousePOJO;
-import co.edu.uniandes.testrunner.loader.pojo.LighthouseReportCategoryPOJO;
-import co.edu.uniandes.testrunner.loader.pojo.POJO;
-import co.edu.uniandes.testrunner.util.LighthouseJsonKeys;
+import co.edu.uniandes.testrunner.core.loader.Loader;
+import co.edu.uniandes.testrunner.core.loader.pojo.LighthousePOJO;
+import co.edu.uniandes.testrunner.core.loader.pojo.LighthouseReportCategoryPOJO;
+import co.edu.uniandes.testrunner.core.loader.pojo.POJO;
+import co.edu.uniandes.testrunner.core.util.LighthouseJsonKeys;
 
 /**
  * Clase que dado un archivo tipo JSON, especcíficamente los generados por

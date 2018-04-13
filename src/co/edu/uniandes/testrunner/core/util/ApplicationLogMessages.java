@@ -1,4 +1,4 @@
-package co.edu.uniandes.testrunner.util;
+package co.edu.uniandes.testrunner.core.util;
 
 /**
  * Clase que contiene las cadenas de texto a mostrar en los mensajes de log
