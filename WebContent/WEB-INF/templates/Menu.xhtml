@@ -1,18 +1,30 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:h="http://xmlns.jcp.org/jsf/html">
+	xmlns:p="http://primefaces.org/ui">
 
-	<nav class="aw-menu">
-		<ul>
-			<li><h:link>
-					<i class="fa  fa-fw  fa-home"></i>Dashboard</h:link></li>
-			<li class="is-selected"><h:link>
-					<i class="fa  fa-fw  fa-user"></i>Página 1</h:link></li>
-			<li><h:link>
-					<i class="fa  fa-fw  fa-file-text"></i>Página 2</h:link></li>
-			<li><h:link>
-					<i class="fa  fa-fw  fa-cog"></i>Página 3</h:link></li>
-		</ul>
-	</nav>
+
+	<h:form id="mainMenuForm">
+		<p:growl id="messages" showDetail="false" />
+
+		<p:menu style="white-space: nowrap;width: auto !important;">
+			<p:submenu label="Ejecución de Pruebas">
+				<p:menuitem value="Aplicaciones Web" actionListener="#"
+					update="messages" icon="fa fa-newspaper-o" />
+				<p:menuitem value="Aplicaciones Android" actionListener="#"
+					update="messages" icon="fa fa-android" />
+			</p:submenu>
+			<p:submenu label="#{menuMB.test}">
+				<p:menuitem value="Delete" actionListener="#" update="messages"
+					ajax="false" icon="ui-icon-close" />
+			</p:submenu>
+			<p:submenu label="Navigations">
+				<p:menuitem value="External" url="http://www.primefaces.org"
+					icon="ui-icon-home" />
+			</p:submenu>
+		</p:menu>
+	</h:form>
+
 
 </ui:composition>
