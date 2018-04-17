@@ -9,17 +9,17 @@
 		<p:growl id="messages" showDetail="false" />
 
 		<p:menu style="white-space: nowrap;width: auto !important;">
-			<p:submenu label="Ejecución de Pruebas">
-				<p:menuitem value="Aplicaciones Web" actionListener="#"
+			<p:submenu label="#{menuMB.testCasesHeader}">
+				<p:menuitem value="Aplicaciones Web" url="/execution/web.xhtml"
 					update="messages" icon="fa fa-newspaper-o" />
 				<p:menuitem value="Aplicaciones Android" actionListener="#"
 					update="messages" icon="fa fa-android" />
 			</p:submenu>
-			<p:submenu label="#{menuMB.test}">
+			<p:submenu label="#{menuMB.reportsHeader}">
 				<p:menuitem value="Delete" actionListener="#" update="messages"
 					ajax="false" icon="ui-icon-close" />
 			</p:submenu>
-			<p:submenu label="Navigations">
+			<p:submenu label="#{menuMB.aboutHeader}">
 				<p:menuitem value="External" url="http://www.primefaces.org"
 					icon="ui-icon-home" />
 			</p:submenu>

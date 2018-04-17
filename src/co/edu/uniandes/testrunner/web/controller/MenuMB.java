@@ -16,7 +16,7 @@ public class MenuMB {
 
 	@PostConstruct
 	void init() {
-		System.out.println("Bean Up!!!");
+
 	}
 
 	public String getTestCasesHeader() {
