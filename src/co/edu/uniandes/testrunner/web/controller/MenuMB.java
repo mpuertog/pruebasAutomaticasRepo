@@ -8,7 +8,7 @@ import co.edu.uniandes.testrunner.web.transversal.WebConstants;
 
 @ManagedBean
 @ViewScoped
-public class MenuMB {
+public class MenuMB extends BaseMB {
 
 	private String testCasesHeader = WebConstants.TEST_CASES_HEADER;
 	private String reportsHeader = WebConstants.REPORT_HEADER;

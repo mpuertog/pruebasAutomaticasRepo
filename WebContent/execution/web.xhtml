@@ -9,8 +9,35 @@
 		<h1 class="aw-page-title">Ejecución de Pruebas sobre Aplicaciones
 			Web</h1>
 
-		<h:form id="frm">
-			Contenido
+		<p:ajaxStatus onstart="PF('statusDialog').show()"
+			onsuccess="PF('statusDialog').hide()" />
+
+		<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
+			closable="false" resizable="false" showHeader="false">
+			<h:graphicImage value="/resources/algaworks/images/loading.gif" />
+			<br />
+			<p:outputLabel value="Procesando..." />
+		</p:dialog>
+
+		<h:form id="webSuiteForm">
+			<p:fieldset legend="PWA" toggleable="true" toggleSpeed="500">
+				<h:panelGrid columns="2" cellpadding="5">
+					<h:graphicImage
+						value="/resources/algaworks/images/pwa-lighthouse.png"
+						width="80px" />
+					<h:outputText
+						value="Evaluación  de características de PWA (Progressive Web App) utilizando la herramienta Google Lighthouse."></h:outputText>
+					<h:outputText value="Ingrese la URL a analizar: " style="width=85%" />
+					<p:inputText id="urlInput" value="#{webMB.targetURL}" size="50"
+						maxlength="1000" required="true"
+						requiredMessage="Debe ingresar una URL">
+						<p:watermark for="urlInput" value="http://www.example.com" />
+					</p:inputText>
+					<p:commandButton value="Evaluar..." update="layoutForm:messages"
+						actionListener="#{webMB.lighthouseTest()}" partialSubmit="true"
+						process="@form" async="true" />
+				</h:panelGrid>
+			</p:fieldset>
 		</h:form>
 	</ui:define>
 
