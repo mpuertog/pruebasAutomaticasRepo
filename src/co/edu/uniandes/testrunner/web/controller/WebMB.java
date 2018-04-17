@@ -25,4 +25,9 @@ public class WebMB extends BaseMB {
 		infoMessage(WebConstants.LIGHTHOUSE_FINISHED + targetURL);
 	}
 
+	public void cypressTest() {
+		CommandRunner.getRunner().runCommand(WebConstants.CYPRESS_COMMAND);
+		infoMessage(WebConstants.CYPRESS_FINISHED + targetURL);
+	}
+
 }

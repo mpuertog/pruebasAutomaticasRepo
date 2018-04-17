@@ -28,13 +28,29 @@
 					<h:outputText
 						value="Evaluación  de características de PWA (Progressive Web App) utilizando la herramienta Google Lighthouse."></h:outputText>
 					<h:outputText value="Ingrese la URL a analizar: " style="width=85%" />
-					<p:inputText id="urlInput" value="#{webMB.targetURL}" size="50"
-						maxlength="1000" required="true"
-						requiredMessage="Debe ingresar una URL">
-						<p:watermark for="urlInput" value="http://www.example.com" />
+					<p:inputText id="lighthouseInput" value="#{webMB.targetURL}"
+						size="50" maxlength="1000">
+						<p:watermark for="lighthouseInput" value="http://www.example.com" />
 					</p:inputText>
 					<p:commandButton value="Evaluar..." update="layoutForm:messages"
 						actionListener="#{webMB.lighthouseTest()}" partialSubmit="true"
+						process="@form" async="true" />
+				</h:panelGrid>
+			</p:fieldset>
+
+			<p:fieldset legend="E2E" toggleable="true" toggleSpeed="500">
+				<h:panelGrid columns="2" cellpadding="5">
+					<h:graphicImage value="/resources/algaworks/images/cypress.png"
+						width="100px" />
+					<h:outputText
+						value="Ejecución de pruebas End to End utilizando la plataforma Cypress."></h:outputText>
+					<h:outputText value="Ingrese la URL a analizar: " style="width=85%" />
+					<p:inputText id="cypressInput" value="#{webMB.targetURL}" size="50"
+						maxlength="1000">
+						<p:watermark for="cypressInput" value="http://www.example.com" />
+					</p:inputText>
+					<p:commandButton value="Evaluar..." update="layoutForm:messages"
+						actionListener="#{webMB.cypressTest()}" partialSubmit="true"
 						process="@form" async="true" />
 				</h:panelGrid>
 			</p:fieldset>
