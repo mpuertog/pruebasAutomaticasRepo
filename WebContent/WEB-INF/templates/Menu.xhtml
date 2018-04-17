@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<h:form id="mainMenuForm">
+		<p:growl id="messages" showDetail="false" />
+
+		<p:menu style="white-space: nowrap;width: auto !important;">
+			<p:submenu label="#{menuMB.testCasesHeader}">
+				<p:menuitem value="Aplicaciones Web" url="/execution/web.xhtml"
+					update="messages" icon="fa fa-newspaper-o" />
+				<p:menuitem value="Aplicaciones Android" actionListener="#"
+					update="messages" icon="fa fa-android" />
+			</p:submenu>
+			<p:submenu label="#{menuMB.reportsHeader}">
+				<p:menuitem value="Delete" actionListener="#" update="messages"
+					ajax="false" icon="ui-icon-close" />
+			</p:submenu>
+			<p:submenu label="#{menuMB.aboutHeader}">
+				<p:menuitem value="External" url="http://www.primefaces.org"
+					icon="ui-icon-home" />
+			</p:submenu>
+		</p:menu>
+	</h:form>
+
+
+</ui:composition>
