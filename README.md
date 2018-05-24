@@ -1,3 +1,3 @@
 # Repositorio del Proyecto de Pruebas Automáticas
 
-Por favor visite la [Wiki](https://github.com/mpuertog/pruebasAutomaticasRepo/wiki)
+Por favor visite la https://github.com/mpuertog/TestRunner
